@@ -1,0 +1,71 @@
+Numerical methods and execution coverage
+========================================
+
+Response samples use direct scaling-and-squaring matrix exponentials and
+singular values in metric coordinates. The four response grids contain 1607
+samples in total. Their stored times are inputs, not newly located maxima.
+The spectral and finite-gain calculations use the same fixed physical model.
+
+Stationary evaluation uses a descending bracket in fast time, negative local
+curvature and a simple leading singular value. The fixed-time gain partial
+is evaluated with a 6-by-6 block exponential and crosschecked by a 3-by-3
+spectral exponential with divided differences. The two precision runs retain
+all 44 fixed metric/gain cases. The comparison case at 34359738368 is separate
+from that grid. It does not replace or extend the 44-row data selection.
+
+Linked directions use one simultaneous sign choice. The companion singular
+vector is transported through the response matrix rather than signed
+independently. Physical-coordinate errors use the declared quadratic metric.
+Shifted responses are evaluated at their own stationary times. The six shifted
+cases also retain unshifted-time control calculations.
+
+The finite-gain search samples both ends of each interval, refines sampled
+local peaks and compares endpoint and interior candidates. Two gain-grid
+densities are checked. The high-precision calculation evaluates eight cases
+at 80 and 110 digits, including joint stationary equations for one interior
+candidate. Conditional local curvature is not a global optimality certificate.
+
+Directed enclosures use mpmath interval arithmetic with a degree-26 Taylor
+expansion, an explicit truncation remainder and interval scaling/squaring.
+Floating-point singular values propose bounds; interval LDL checks validate
+the associated inequalities. Rational witness seeds are normalized separately.
+Every one of the 128 closed reciprocal-gain cells is enclosed for each case.
+Every positive-time sample through the terminal contraction is evaluated.
+Time zero has norm one and is included in the grid maximum. The intersample
+factor and terminal contraction supply the all-time response comparison.
+
+The independent replay uses only Python integers and exact fractions in its
+arithmetic kernel. It recomputes all cells and sample inequalities on a
+256-bit fixed grid with a degree-34 Taylor expansion. Recorded norm bounds
+serve as proposals, not trusted solutions. This numerical verification does
+not establish correctness of the Python or arithmetic implementations.
+
+Three fixed cases are evaluated at both interval precisions. The normalized
+incumbent is 6.5 and the cutoff is 10. The strict displayed bounds are 1.102
+from above and 1.119 from below. The tighter decay requirement 59/20 uses the
+same normalized objective and incumbent; its strict feasibility is checked
+separately by exact rational evaluation of the fixed cubic coefficients.
+
+Stored-record checking is distinct from numerical reproduction. The check
+mode verifies schemas, finite coverage, outward serialization, scalar
+arithmetic and supplied inputs. The intervals and integer-replay modes
+recompute the matrix enclosures. The stationary, directions, comparison and
+finite-gain modes recompute numerical searches or evaluations. Export copies
+retained data and generates the selected-row product from its one policy.
+
+The supplied comparison rates and their three residual multipliers are not
+recomputed. Scalar boundary observations and the four-state reference-accuracy
+data are retained inputs. No numerical command establishes new comparison
+ranges, a certified global gain optimizer or a certified residual enclosure.
+
+Primary value comparisons use 1e-55 relative tolerance with a 1e-100 scale
+floor. Finite-gain comparisons use 1e-50 for nonzero quantities and a 1e-60
+absolute tolerance for numerically zero gain partials. Recomputed discrepancies
+from stored decimal strings use 1e-45 relative tolerance to allow subtraction
+loss. Floating-point response samples use 2e-10 times max(1, absolute value).
+Matched-precision producer checks and directed strict inequalities remain
+separate from these comparison tolerances.
+
+Numerical-method provenance is restricted to bibliographic identifiers.
+The fixed-time exponential derivative identifier is DOI 10.1137/080716426.
+The interval-exponential identifier is DOI 10.1137/19M1263431.

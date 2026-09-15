@@ -1,0 +1,18 @@
+{
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "mpmath": "1.3.0",
+  "pytest": "9.0.2",
+  "floating_point": "binary64",
+  "stationary_decimal_digits": [
+    80,
+    110
+  ],
+  "interval_decimal_digits": [
+    50,
+    80
+  ],
+  "integer_binary_bits": 256,
+  "platform_system": "Linux"
+}

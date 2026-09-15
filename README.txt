@@ -1,4 +1,5 @@
-# Transient response simulations
+Transient response simulations
+==============================
 
 This package evaluates a fixed three-state continuous-time feedback model in
 raw and normalized quadratic state metrics. It contains numerical inputs,
@@ -10,7 +11,8 @@ The physical state order is theta, xi, i. The raw metric is the identity in
 those physical coordinates. The normalized metric has diagonal entries
 1, 1/25, 1/4. Both metrics remain fixed during each gain comparison.
 
-## Scope of reproduction
+Scope of reproduction
+---------------------
 
 The response workflow recalculates matrix-exponential samples at supplied
 time grids. The stationary workflow evaluates all 22 gains in each metric
@@ -44,7 +46,8 @@ the new stationary and finite-gain runs provide their own independent outputs.
 The export command is a data export, not a solver execution. No single command
 is claimed to regenerate every supplied observation from first principles.
 
-## Environment and quick start
+Environment and quick start
+---------------------------
 
 The tested environment is Linux with Python 3.13.5. The exact dependency
 versions are pinned in requirements.txt. Windows PowerShell and macOS/Linux
@@ -56,68 +59,60 @@ outside the package. After activation, python must refer to that environment.
 
 macOS or Linux (Bash or Zsh):
 
-```text
-python3 -m venv ../response_environment
-source ../response_environment/bin/activate
-python -m pip install -r requirements.txt
-export PYTHONDONTWRITEBYTECODE=1
-export PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
-export OPENBLAS_NUM_THREADS=1
-export OMP_NUM_THREADS=1
-python -B verify_release.py
-python -B -m pytest -q -p no:cacheprovider tests
-python -B reproduce.py --mode check --output ../response_check
-python -B reproduce.py --mode responses --output ../response_samples
-```
+    python3 -m venv ../response_environment
+    source ../response_environment/bin/activate
+    python -m pip install -r requirements.txt
+    export PYTHONDONTWRITEBYTECODE=1
+    export PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+    export OPENBLAS_NUM_THREADS=1
+    export OMP_NUM_THREADS=1
+    python -B verify_release.py
+    python -B -m pytest -q -p no:cacheprovider tests
+    python -B reproduce.py --mode check --output ../response_check
+    python -B reproduce.py --mode responses --output ../response_samples
 
 Windows PowerShell:
 
-```text
-py -3.13 -m venv ..\response_environment
-$PY = "..\response_environment\Scripts\python.exe"
-& $PY -m pip install -r requirements.txt
-$env:PYTHONDONTWRITEBYTECODE = "1"
-$env:PYTEST_DISABLE_PLUGIN_AUTOLOAD = "1"
-$env:OPENBLAS_NUM_THREADS = "1"
-$env:OMP_NUM_THREADS = "1"
-& $PY -B verify_release.py
-& $PY -B -m pytest -q -p no:cacheprovider tests
-& $PY -B reproduce.py --mode check --output ..\response_check
-& $PY -B reproduce.py --mode responses --output ..\response_samples
-```
+    py -3.13 -m venv ..\response_environment
+    $PY = "..\response_environment\Scripts\python.exe"
+    & $PY -m pip install -r requirements.txt
+    $env:PYTHONDONTWRITEBYTECODE = "1"
+    $env:PYTEST_DISABLE_PLUGIN_AUTOLOAD = "1"
+    $env:OPENBLAS_NUM_THREADS = "1"
+    $env:OMP_NUM_THREADS = "1"
+    & $PY -B verify_release.py
+    & $PY -B -m pytest -q -p no:cacheprovider tests
+    & $PY -B reproduce.py --mode check --output ..\response_check
+    & $PY -B reproduce.py --mode responses --output ..\response_samples
 
 Dependency installation may use the network. Numerical execution itself does
 not use the network or launch subprocesses. Python 3.13 must be installed for
 the Windows command above. The direct interpreter path avoids any dependency
 on a PowerShell activation-script execution policy.
 
-## Workflow selection
+Workflow selection
+------------------
 
 Use one mode at a time, or all for the complete sequence. From an activated
 macOS/Linux environment:
 
-```text
-python -B reproduce.py --mode all --output ../response_results
-```
+    python -B reproduce.py --mode all --output ../response_results
 
 In PowerShell after defining $PY and the environment variables above:
 
-```text
-& $PY -B reproduce.py --mode all --output ..\response_results
-```
+    & $PY -B reproduce.py --mode all --output ..\response_results
 
-| Mode | Operation |
-|---|---|
-| `check` | Verify stored records, scalar arithmetic, and schemas. |
-| `export` | Copy retained CSV files and generate selected_diagnostics.csv. |
-| `responses` | Recompute 1607 matrix-exponential response samples. |
-| `stationary` | Evaluate 44 metric/gain cases at 80 and 110 decimal digits. |
-| `directions` | Recompute five unshifted and six shifted direction cases. |
-| `comparison` | Evaluate residuals at the supplied unshifted comparison rate. |
-| `finite-gain` | Recompute sampled searches and high-precision local candidates. |
-| `intervals` | Recompute three directed response comparisons at two precisions. |
-| `integer-replay` | Recompute their inequalities with integer/fraction arithmetic. |
-| `all` | Execute the eight modes from export through integer-replay. |
+Mode             Operation
+check            Verify stored records, scalar arithmetic, and schemas.
+export           Copy retained CSV files and generate selected_diagnostics.csv.
+responses        Recompute 1607 matrix-exponential response samples.
+stationary       Evaluate 44 metric/gain cases at 80 and 110 decimal digits.
+directions       Recompute five unshifted and six shifted direction cases.
+comparison       Evaluate residuals at the supplied unshifted comparison rate.
+finite-gain      Recompute sampled searches and high-precision local candidates.
+intervals        Recompute three directed response comparisons at two precisions.
+integer-replay   Recompute their inequalities with integer/fraction arithmetic.
+all              Execute the eight modes from export through integer-replay.
 
 The all mode also performs the common input checks. It can require substantially
 more computation than check or responses. No estimated execution time is assumed.
@@ -136,7 +131,8 @@ rejects network activity, subprocess creation and file access outside the
 numerical package, output tree and Python installation. It is an execution
 check, not an operating-system security boundary.
 
-## Inputs and outputs
+Inputs and outputs
+------------------
 
 configs/fixed_inputs.json defines the physical matrices, state metrics,
 reference vectors, prediction coefficients and supplied comparison constants.
@@ -164,7 +160,8 @@ it is not distributed or used by any numerical workflow. Python bytecode and
 pytest caches are disabled by the commands above. Keep results and environments
 outside the package.
 
-## Numerical comparison conventions
+Numerical comparison conventions
+--------------------------------
 
 Stationary heights, times, gain partials and signed residuals are compared
 against retained high-precision values. Matching within 1e-55 is required for
@@ -181,13 +178,15 @@ when its denominator is at most 1e-8 times the reference level. Empty fields,
 JSON null and the explicit plotting token nan denote omitted quantities,
 not numerical zeros. Signed residuals are retained through cancellation.
 
-## Numerical-method identifiers
+Numerical-method identifiers
+----------------------------
 
 Matrix-exponential gain partials use DOI 10.1137/080716426. The numerical
 interval-exponential context is recorded by the identifiers in
 NUMERICAL_METHODS.txt. Dependencies are installed rather than vendored.
 
-## Repository integrity
+Repository integrity
+--------------------
 
 The distributed .gitattributes keeps text files in LF format after checkout.
 The .gitignore prevents common local caches and environments from being staged,
