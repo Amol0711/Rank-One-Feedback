@@ -1,0 +1,790 @@
+{
+  "status": "passed",
+  "methods": {
+    "dps": [
+      80,
+      110
+    ],
+    "time_search": "direct expm, mixed log/uniform grid, all sampled local maxima refined",
+    "gain_search": "65/129 points on each retained interval, local refinement, both endpoints compared",
+    "high_precision": "joint time/gain stationarity; positive conditional gain curvature at unconstrained candidate",
+    "gain_partial": "6x6 block-exponential Frechet partial",
+    "hessian": "9x9 block exponential plus simple-eigenvalue derivatives",
+    "independent_check": "spectral exponential and divided differences",
+    "assurance": "numerical witnesses/candidates only; q(T)<1 is floating-point tail evidence"
+  },
+  "double_searches": [
+    {
+      "case": "eta_half",
+      "left": 1.045875368768027,
+      "right": 10.0,
+      "density": 1,
+      "gain_samples": 65,
+      "selected": {
+        "gain": 6.445330614988952,
+        "peak": 1.1002429813937367,
+        "time": 0.13781267709178013,
+        "alpha": -2.936235831033973,
+        "sample_count": 319,
+        "sampled_humps": 1,
+        "sampled_tail_norm": 7.1427335044982125e-31,
+        "horizon": 24.0,
+        "density": 1,
+        "status": "numerical stationary witness; not an interval-certified global extremum"
+      },
+      "endpoint_selected": false,
+      "local_optimizer": {
+        "gain": 6.445330614988952,
+        "peak": 1.1002429813937367
+      },
+      "sampled_curve_minimum_at_left": false,
+      "scope": "finite sampled search and local refinement; no global gain optimum certified"
+    },
+    {
+      "case": "eta_strong",
+      "left": 6.4797082535399255,
+      "right": 10.0,
+      "density": 1,
+      "gain_samples": 65,
+      "selected": {
+        "gain": 6.4797082535399255,
+        "peak": 1.1002467126306097,
+        "time": 0.13728159354969158,
+        "alpha": -2.950000000000003,
+        "sample_count": 319,
+        "sampled_humps": 1,
+        "sampled_tail_norm": 5.083272353677199e-31,
+        "horizon": 24.0,
+        "density": 1,
+        "status": "numerical stationary witness; not an interval-certified global extremum"
+      },
+      "endpoint_selected": true,
+      "local_optimizer": {
+        "gain": 6.479708360064586,
+        "peak": 1.100246712653645
+      },
+      "sampled_curve_minimum_at_left": true,
+      "scope": "finite sampled search and local refinement; no global gain optimum certified"
+    },
+    {
+      "case": "eta_half",
+      "left": 1.045875368768027,
+      "right": 10.0,
+      "density": 2,
+      "gain_samples": 129,
+      "selected": {
+        "gain": 6.4453308348336495,
+        "peak": 1.1002429813937367,
+        "time": 0.1378126736703688,
+        "alpha": -2.9362359191961307,
+        "sample_count": 639,
+        "sampled_humps": 1,
+        "sampled_tail_norm": 1.7820434751731202e-61,
+        "horizon": 48.0,
+        "density": 2,
+        "status": "numerical stationary witness; not an interval-certified global extremum"
+      },
+      "endpoint_selected": false,
+      "local_optimizer": {
+        "gain": 6.4453308348336495,
+        "peak": 1.1002429813937367
+      },
+      "sampled_curve_minimum_at_left": false,
+      "scope": "finite sampled search and local refinement; no global gain optimum certified"
+    },
+    {
+      "case": "eta_strong",
+      "left": 6.4797082535399255,
+      "right": 10.0,
+      "density": 2,
+      "gain_samples": 129,
+      "selected": {
+        "gain": 6.4797082535399255,
+        "peak": 1.1002467126306092,
+        "time": 0.13728159354969147,
+        "alpha": -2.950000000000003,
+        "sample_count": 639,
+        "sampled_humps": 1,
+        "sampled_tail_norm": 9.432242747410858e-62,
+        "horizon": 48.0,
+        "density": 2,
+        "status": "numerical stationary witness; not an interval-certified global extremum"
+      },
+      "endpoint_selected": true,
+      "local_optimizer": {
+        "gain": 6.479708417477189,
+        "peak": 1.1002467126660591
+      },
+      "sampled_curve_minimum_at_left": true,
+      "scope": "finite sampled search and local refinement; no global gain optimum certified"
+    }
+  ],
+  "high_precision_runs": [
+    {
+      "dps": 80,
+      "rows": [
+        {
+          "name": "weak_boundary",
+          "gain": "1.045875368768027156758697068117313929078267346338306020362797681268182",
+          "time": "0.7485717543366453193081270561877004600179271987079278538056523794696345",
+          "peak": "2.059934952371881799723401417710364290019657425646029848652273361277888",
+          "alpha": "-0.5",
+          "gain_partial": "-1.205319370780570717464618116168796610010312381983248274948689176360765",
+          "time_curvature": "-4.587019598434361052726294639551924969701193899071383702789313698153942",
+          "singular_gap": "1.823522611936351766982179031475740226414376647477180034158921293329372",
+          "stationarity_residual": "9.574283893456438427374673807417397597620099072448768605815084609541548e-82",
+          "spectral_propagator_error": "6.023458369401428307263296368394738974624961430402482076096916375631896e-81",
+          "spectral_partial_error": "3.947665870160492482395145455003730231928691286477822414216953666528637e-81",
+          "status": "numerical stationary witness; not an interval-certified global extremum"
+        },
+        {
+          "name": "low_gain",
+          "gain": "2.0",
+          "time": "0.4493998463573960739991452908775677769640550473839338330546211461562391",
+          "peak": "1.428322239844431179626278023683627651291486726623629299916558817802753",
+          "alpha": "-0.9518750965795640564328175517528137670758787855144438198651414640689282",
+          "gain_partial": "-0.3464596506230671917138716687224614932762526934149168440365275047303548",
+          "time_curvature": "-5.063068997592072836347070362609169276226386990399853403692290080631387",
+          "singular_gap": "1.104916258817437936144904510554677980744486576317928059100540384961125",
+          "stationarity_residual": "7.283769372128790046363744849731137655571592162270410543850526520313936e-82",
+          "spectral_propagator_error": "3.998991519959393961851718410412303697505138916288294702976879261154571e-81",
+          "spectral_partial_error": "2.125982143671632385969955836507214867608164580562885030186090476885191e-81",
+          "status": "numerical stationary witness; not an interval-certified global extremum"
+        },
+        {
+          "name": "peak_candidate",
+          "gain": "6.445330672454430261794204713651283165775324589550992889684465739949998",
+          "time": "0.1378126761974532278398389316797634051467479495744619329617009339342762",
+          "peak": "1.100242981393737004339822362942211381193293809511784114540074752734085",
+          "alpha": "-2.936235854078788756880158538476332773361122569545616528167729669960172",
+          "gain_partial": "-3.225180980213464139817998193450247446612455947072809548080009552869463e-83",
+          "time_curvature": "-13.14859737992794429870380329838198086005907122714411814520211217284619",
+          "singular_gap": "0.4566271721481696561656985115889782732874168724249791030047810080456264",
+          "stationarity_residual": "2.547242580518409158431638255512772026814501581472307930119750120423208e-81",
+          "spectral_propagator_error": "4.169999244102823966526589539898276837155022604507344917968640808376556e-81",
+          "spectral_partial_error": "4.056263235164810573069068198509101864162625102588822407600317690007504e-82",
+          "status": "numerical stationary witness; not an interval-certified global extremum",
+          "Gkk": "0.00317859977570634246068327780266219124068467387422638140694587051142514",
+          "Gtk": "-0.2046297213134441258902534811979075112803867230041271279287688310486047",
+          "branch_second_derivative": "0.006363222563589385799151892070030796805666025331521719171073819046891025"
+        },
+        {
+          "name": "strong_boundary",
+          "gain": "6.479708253539924802246143420728052903301246742989871461233270810808238",
+          "time": "0.137281593549691675407216170362525914477604169194829834250732391364568",
+          "peak": "1.100246712630609362256424641229860113388012825712411380132980263725161",
+          "alpha": "-2.95",
+          "gain_partial": "0.0002162402563846467661148582081977093101515347461723059402774186187239775",
+          "time_curvature": "-13.24788606368767235168908819476642281531043927976411805700725079055826",
+          "singular_gap": "0.4555246058548991333004479331338650292648673227303841576346857989287807",
+          "stationarity_residual": "1.306582149913040466530081015920674748580488364683273686172853942179947e-81",
+          "spectral_propagator_error": "6.160117057986371879943392710292397773233859669315949931957027297540803e-81",
+          "spectral_partial_error": "2.866126747763146699997026850417716587381468632296769248268904352880467e-82",
+          "status": "numerical stationary witness; not an interval-certified global extremum"
+        },
+        {
+          "name": "strong_boundary_plus_1e-4",
+          "gain": "6.479808253539924802246143420728052903301246742989871461233270810808238",
+          "time": "0.1372800600804599105382199240503305620099962934874803724715974533272965",
+          "peak": "1.100246734285722965387445480220138518740880052871294845647293166541844",
+          "alpha": "-2.950039973705632943334347909910357712882239358094624452003866412635884",
+          "gain_partial": "0.0002168620087184408809445141330093709088536199602518836539843714817707568",
+          "time_curvature": "-13.24817563412198248863554314284432340529727294912627622266998021275523",
+          "singular_gap": "0.4555214277104821832216087408830486912954576273705097611483698545555253",
+          "stationarity_residual": "2.35286190993021749844980070869095829037923933094021495723689838805858e-81",
+          "spectral_propagator_error": "3.293844942648042707652603379916071949906714065949071169638814102211353e-81",
+          "spectral_partial_error": "2.137925435963150071577698300674063569549650703904979077794502982293179e-82",
+          "status": "numerical stationary witness; not an interval-certified global extremum"
+        },
+        {
+          "name": "incumbent",
+          "gain": "6.5",
+          "time": "0.1369717627465431101992775749605920483861604205484626972314921714574093",
+          "peak": "1.100252374821845679012567329054926519334657739347991783308306694402034",
+          "alpha": "-2.958103632306085807315348502396682165226544714749775727396004059142185",
+          "gain_partial": "0.0003415536678003560545222520362663375765796532750576213871027801543541821",
+          "time_curvature": "-13.3067342206719624801793847363210853322550430004260363344816799379979",
+          "singular_gap": "0.4548831249003717742895485609676300562717755572526979467517236088415452",
+          "stationarity_residual": "7.973002262075606931218748728245632316489257877326304681606766838662311e-82",
+          "spectral_propagator_error": "2.936044221024571375415734530625986224847927664339323085553918551164125e-81",
+          "spectral_partial_error": "2.215804543705025960011528868632580332315921566978912504512930240673844e-82",
+          "status": "numerical stationary witness; not an interval-certified global extremum"
+        },
+        {
+          "name": "exclusion_boundary",
+          "gain": "10.0",
+          "time": "0.1057929986991511714924902965395010276102225250769565312531922480261249",
+          "peak": "1.121619441869011277503496431797682573357576236363389303709053655714931",
+          "alpha": "-3.922782654984058139120353216740324752370327528903945708755382246826794",
+          "gain_partial": "0.008949409753436440514192392933754586064611114833920883708032348165235214",
+          "time_curvature": "-25.81908286193901944501428637011910462037191452666999203727196993463195",
+          "singular_gap": "0.4038256542077660848774236510332889896611668370443319703106059666328094",
+          "stationarity_residual": "1.016927985593005524365017344984525003853839152455353431997740226659849e-80",
+          "spectral_propagator_error": "5.60383611935383151729924598947783719136573300862449615899802804840846e-81",
+          "spectral_partial_error": "1.526963368485642292150766935966660897333832516908676031426440836423381e-82",
+          "status": "numerical stationary witness; not an interval-certified global extremum"
+        },
+        {
+          "name": "reference_gain_12",
+          "gain": "12.0",
+          "time": "0.09644270347201997697778310534482595462988820062540290979795175026509815",
+          "peak": "1.140333747603853819883726554294484543863967343245147658321676245586972",
+          "alpha": "-4.0",
+          "gain_partial": "0.009568239322235628947749292717293487966664883804482144570397233305506751",
+          "time_curvature": "-34.64902103198629518392176231327588228691913405711977704199233591895649",
+          "singular_gap": "0.3980374460597853439964963307866480846266171504728088173328432393362663",
+          "stationarity_residual": "1.29494056439839791333623895245554437570491058770151533411946871567765e-80",
+          "spectral_propagator_error": "2.765949261398627760485705003020528228474485104371197958008906437069588e-81",
+          "spectral_partial_error": "1.374356451703048099976768983994785490019333040997253189150404060794528e-82",
+          "status": "numerical stationary witness; not an interval-certified global extremum"
+        }
+      ],
+      "joint_stationarity_residual": "2.54724258051840915843163825551e-81",
+      "relative_peak_cost_percent": "3.643810220841553029324382926824281144995717986586501945839873934373219",
+      "boundary_penalty_percent": "0.0003391284412131725689219558347874940424728001845504536390062272415417239"
+    },
+    {
+      "dps": 110,
+      "rows": [
+        {
+          "name": "weak_boundary",
+          "gain": "1.045875368768027156758697068117313929078267346338306020362797681268181601350559099401969799721815796",
+          "time": "0.748571754336645319308127056187700460017927198707927853805652379469634541389315021930666223133198745",
+          "peak": "2.059934952371881799723401417710364290019657425646029848652273361277888316143326938726535741668334424",
+          "alpha": "-0.5",
+          "gain_partial": "-1.205319370780570717464618116168796610010312381983248274948689176360764776806969468930018494126220289",
+          "time_curvature": "-4.587019598434361052726294639551924969701193899071383702789313698153942157942130714603560338823077479",
+          "singular_gap": "1.823522611936351766982179031475740226414376647477180034158921293329371599945361860342883465119990507",
+          "stationarity_residual": "2.374651821969576156552465805256091560698168812276113917425637507527434989704104432516582828802773942e-112",
+          "spectral_propagator_error": "7.220645759301434403605721720146281828868535294840770965192563623825882579445138877147250186526785283e-111",
+          "spectral_partial_error": "9.673711921648078151092007757138618100234657187426608899061078491472303325157969825406272871048608374e-111",
+          "status": "numerical stationary witness; not an interval-certified global extremum"
+        },
+        {
+          "name": "low_gain",
+          "gain": "2.0",
+          "time": "0.4493998463573960739991452908775677769640550473839338330546211461562391444572099786296570505727326092",
+          "peak": "1.428322239844431179626278023683627651291486726623629299916558817802752905883526413671855170858584924",
+          "alpha": "-0.9518750965795640564328175517528137670758787855144438198651414640689281857845737810108756940663981045",
+          "gain_partial": "-0.3464596506230671917138716687224614932762526934149168440365275047303547685832483504413969911721071609",
+          "time_curvature": "-5.063068997592072836347070362609169276226386990399853403692290080631387150100156668385985286723935902",
+          "singular_gap": "1.104916258817437936144904510554677980744486576317928059100540384961125034878125476643759186277596222",
+          "stationarity_residual": "2.622979744409410354303622983779144036535046994837301009441863456581152758526451949054633886723530853e-112",
+          "spectral_propagator_error": "2.552054182468453427688748294562718899477685472991386579542451860767743167029173702486091432283914969e-111",
+          "spectral_partial_error": "4.31313104477702161705026369220483440105574809356885972391113425266700440547545199986839740413526257e-112",
+          "status": "numerical stationary witness; not an interval-certified global extremum"
+        },
+        {
+          "name": "peak_candidate",
+          "gain": "6.44533067245443026179420471365128316577532458955099288968446573994999836375421666782103898640316307",
+          "time": "0.1378126761974532278398389316797634051467479495744619329617009339342761550972623901075698349620579149",
+          "peak": "1.10024298139373700433982236294221138119329380951178411454007475273408484924959050888491476307379649",
+          "alpha": "-2.936235854078788756880158538476332773361122569545616528167729669960171956988400873265306170329897531",
+          "gain_partial": "-2.608681975373943084058938229782598609113437040741619895400286639179330669087204910628515629142547337e-111",
+          "time_curvature": "-13.14859737992794429870380329838198086005907122714411814520211217284619219274914684765009854890036594",
+          "singular_gap": "0.4566271721481696561656985115889782732874168724249791030047810080456263668531619244018987451202576208",
+          "stationarity_residual": "4.221338236769052095141955811102137243682921829373938246232459597089866685651045992379993451478971483e-111",
+          "spectral_propagator_error": "3.324819481004466449525164624407277964305891111847854437534893337195088919065754242358882814373200368e-111",
+          "spectral_partial_error": "6.065129907521757061209390064796704782781926523355654245866127905908928159342766857962387768893381462e-113",
+          "status": "numerical stationary witness; not an interval-certified global extremum",
+          "Gkk": "0.003178599775706342460683277802662191240684673874226381406945870511425139503790254893863057752071581942",
+          "Gtk": "-0.2046297213134441258902534811979075112803867230041271279287688310486047303946061150075810679699590758",
+          "branch_second_derivative": "0.006363222563589385799151892070030796805666025331521719171073819046891024826929342398397359842969297392"
+        },
+        {
+          "name": "strong_boundary",
+          "gain": "6.479708253539924802246143420728052903301246742989871461233270810808238053826809899352177297906966829",
+          "time": "0.1372815935496916754072161703625259144776041691948298342507323913645680056082112094938849082881391251",
+          "peak": "1.100246712630609362256424641229860113388012825712411380132980263725161091678024437400957005163225143",
+          "alpha": "-2.95",
+          "gain_partial": "0.0002162402563846467661148582081977093101515347461723059402774186187239774609124623117335865841665353143",
+          "time_curvature": "-13.2478860636876723516890881947664228153104392797641180570072507905582584941550153514794161321583857",
+          "singular_gap": "0.4555246058548991333004479331338650292648673227303841576346857989287807130326670776238510608525228766",
+          "stationarity_residual": "7.532985541498994358763929700680896823080177654555802163137076631070208369865055359278929926082838481e-112",
+          "spectral_propagator_error": "3.612388757761852162424398865244141995756274800573587903162061934583869463512932530503798359126292302e-111",
+          "spectral_partial_error": "1.911449623065712382489743257777351248397324567557527009843615834558751138932440039232456435541269058e-112",
+          "status": "numerical stationary witness; not an interval-certified global extremum"
+        },
+        {
+          "name": "strong_boundary_plus_1e-4",
+          "gain": "6.479808253539924802246143420728052903301246742989871461233270810808238053826809899352177297906966829",
+          "time": "0.137280060080459910538219924050330562009996293487480372471597453327296515454153153407950127836957411",
+          "peak": "1.100246734285722965387445480220138518740880052871294845647293166541843763523324929448653054262147838",
+          "alpha": "-2.950039973705632943334347909910357712882239358094624452003866412635883878132281719307262361240982944",
+          "gain_partial": "0.0002168620087184408809445141330093709088536199602518836539843714817707568430570232787207810034293545935",
+          "time_curvature": "-13.24817563412198248863554314284432340529727294912627622266998021275523116156548470208260100958211498",
+          "singular_gap": "0.4555214277104821832216087408830486912954576273705097611483698545555253429336334519653800084371116217",
+          "stationarity_residual": "3.145981286208411573055151948143458687147777399082265654963520127920537966361764895736436056439895781e-111",
+          "spectral_propagator_error": "3.11843835226933201515655180676839313552253596070074575988703931277273730727939118906515976141134242e-111",
+          "spectral_partial_error": "1.027321987109828325619695778805132556416685074213171104096049830685254473701019536902291335603126073e-112",
+          "status": "numerical stationary witness; not an interval-certified global extremum"
+        },
+        {
+          "name": "incumbent",
+          "gain": "6.5",
+          "time": "0.1369717627465431101992775749605920483861604205484626972314921714574092810799265845211784662555174284",
+          "peak": "1.100252374821845679012567329054926519334657739347991783308306694402034314793371034376087292418853772",
+          "alpha": "-2.958103632306085807315348502396682165226544714749775727396004059142184706292678837860893334179564792",
+          "gain_partial": "0.0003415536678003560545222520362663375765796532750576213871027801543541820603264642440736367338131830421",
+          "time_curvature": "-13.30673422067196248017938473632108533225504300042603633448167993799790035651789727485338177143724083",
+          "singular_gap": "0.4548831249003717742895485609676300562717755572526979467517236088415452488343810456372219376702100154",
+          "stationarity_residual": "1.393047158538895148542987454212247662749340675726735381719021702878944826792333877304494924374831296e-111",
+          "spectral_propagator_error": "2.951216371461978486849159293133217856307016562063118557584577753158975849846276911258454157599248562e-111",
+          "spectral_partial_error": "1.309203031042600152013992618761337772445457284893720993563681054174392807245099078274557181457077536e-112",
+          "status": "numerical stationary witness; not an interval-certified global extremum"
+        },
+        {
+          "name": "exclusion_boundary",
+          "gain": "10.0",
+          "time": "0.1057929986991511714924902965395010276102225250769565312531922480261249050685378045375608129163798326",
+          "peak": "1.121619441869011277503496431797682573357576236363389303709053655714931418610760841380119745298366996",
+          "alpha": "-3.922782654984058139120353216740324752370327528903945708755382246826794446675829599907279248228378362",
+          "gain_partial": "0.00894940975343644051419239293375458606461111483392088370803234816523521433208731296280625083249383354",
+          "time_curvature": "-25.81908286193901944501428637011910462037191452666999203727196993463194642225884976147059197788882519",
+          "singular_gap": "0.4038256542077660848774236510332889896611668370443319703106059666328093517919201305312818865833474556",
+          "stationarity_residual": "5.469425483263685702145838869090017868630211809081013019151691298600401506696971087780454217845660865e-111",
+          "spectral_propagator_error": "3.050036867297311011684136784585288111860827979633580574019874950317903066308128363936743905066297091e-111",
+          "spectral_partial_error": "2.483173308252922857399841945356787628877851573899447117074776961215305418688016176408768250814773992e-112",
+          "status": "numerical stationary witness; not an interval-certified global extremum"
+        },
+        {
+          "name": "reference_gain_12",
+          "gain": "12.0",
+          "time": "0.09644270347201997697778310534482595462988820062540290979795175026509815086860651635303093667566218587",
+          "peak": "1.140333747603853819883726554294484543863967343245147658321676245586972083990437252991685892864932709",
+          "alpha": "-4.0",
+          "gain_partial": "0.009568239322235628947749292717293487966664883804482144570397233305506750592161191574655286214848230706",
+          "time_curvature": "-34.64902103198629518392176231327588228691913405711977704199233591895648506215608750810932153060373313",
+          "singular_gap": "0.3980374460597853439964963307866480846266171504728088173328432393362662945041593233325735540016568749",
+          "stationarity_residual": "3.265169530124024233000999884789163969473761178251206276315636552363088765633238659327268375350238445e-111",
+          "spectral_propagator_error": "5.046127443947689729369193777482527686318754604257988492868573012177778118733705184109594110149765047e-111",
+          "spectral_partial_error": "3.532246834624456843666884205446821400151499512556778554510730910026046235659341464715218508321630646e-112",
+          "status": "numerical stationary witness; not an interval-certified global extremum"
+        }
+      ],
+      "joint_stationarity_residual": "4.00518989534257080109227429158e-110",
+      "relative_peak_cost_percent": "3.643810220841553029324382926824281144995717986586501945839873934373241308933516096757882831144255739",
+      "boundary_penalty_percent": "0.0003391284412131725689219558347874940424728001845504536390062272415637580653007156214704777918951290422"
+    }
+  ],
+  "precision_comparisons": [
+    {
+      "name": "weak_boundary",
+      "quantity": "gain",
+      "scaled_absolute_error": "3.811634280766942837821347e-70"
+    },
+    {
+      "name": "weak_boundary",
+      "quantity": "time",
+      "scaled_absolute_error": "4.13893150219306662231332e-71"
+    },
+    {
+      "name": "weak_boundary",
+      "quantity": "peak",
+      "scaled_absolute_error": "1.534724805628973634998176e-70"
+    },
+    {
+      "name": "weak_boundary",
+      "quantity": "alpha",
+      "scaled_absolute_error": "0.0"
+    },
+    {
+      "name": "weak_boundary",
+      "quantity": "gain_partial",
+      "scaled_absolute_error": "1.851733540020426982080024e-70"
+    },
+    {
+      "name": "weak_boundary",
+      "quantity": "time_curvature",
+      "scaled_absolute_error": "3.443240808661734941957808e-71"
+    },
+    {
+      "name": "weak_boundary",
+      "quantity": "singular_gap",
+      "scaled_absolute_error": "2.193856196358592912113679e-70"
+    },
+    {
+      "name": "low_gain",
+      "quantity": "gain",
+      "scaled_absolute_error": "0.0"
+    },
+    {
+      "name": "low_gain",
+      "quantity": "time",
+      "scaled_absolute_error": "4.445720997862965705057273e-71"
+    },
+    {
+      "name": "low_gain",
+      "quantity": "peak",
+      "scaled_absolute_error": "6.589302536980663765116335e-71"
+    },
+    {
+      "name": "low_gain",
+      "quantity": "alpha",
+      "scaled_absolute_error": "1.42154262189891243059336e-71"
+    },
+    {
+      "name": "low_gain",
+      "quantity": "gain_partial",
+      "scaled_absolute_error": "3.141675164955860300882789e-71"
+    },
+    {
+      "name": "low_gain",
+      "quantity": "time_curvature",
+      "scaled_absolute_error": "2.964608160382005271435836e-71"
+    },
+    {
+      "name": "low_gain",
+      "quantity": "singular_gap",
+      "scaled_absolute_error": "3.156630667556007905686065e-71"
+    },
+    {
+      "name": "peak_candidate",
+      "quantity": "gain",
+      "scaled_absolute_error": "5.643685873595383819528276e-71"
+    },
+    {
+      "name": "peak_candidate",
+      "quantity": "time",
+      "scaled_absolute_error": "4.490273760989243016503794e-71"
+    },
+    {
+      "name": "peak_candidate",
+      "quantity": "peak",
+      "scaled_absolute_error": "1.370155611446404570554545e-70"
+    },
+    {
+      "name": "peak_candidate",
+      "quantity": "alpha",
+      "scaled_absolute_error": "1.464855047900404554740279e-71"
+    },
+    {
+      "name": "peak_candidate",
+      "quantity": "gain_partial",
+      "scaled_absolute_error": "3.225180980213464139817998e-83"
+    },
+    {
+      "name": "peak_candidate",
+      "quantity": "time_curvature",
+      "scaled_absolute_error": "1.667667724159690252290801e-70"
+    },
+    {
+      "name": "peak_candidate",
+      "quantity": "singular_gap",
+      "scaled_absolute_error": "3.314683807559810125487974e-71"
+    },
+    {
+      "name": "strong_boundary",
+      "quantity": "gain",
+      "scaled_absolute_error": "8.306980467823700412450449e-72"
+    },
+    {
+      "name": "strong_boundary",
+      "quantity": "time",
+      "scaled_absolute_error": "5.608211209493884908288139e-72"
+    },
+    {
+      "name": "strong_boundary",
+      "quantity": "peak",
+      "scaled_absolute_error": "8.332497010439186910980473e-71"
+    },
+    {
+      "name": "strong_boundary",
+      "quantity": "alpha",
+      "scaled_absolute_error": "0.0"
+    },
+    {
+      "name": "strong_boundary",
+      "quantity": "gain_partial",
+      "scaled_absolute_error": "3.908753768826641341583346e-74"
+    },
+    {
+      "name": "strong_boundary",
+      "quantity": "time_curvature",
+      "scaled_absolute_error": "1.136668127586050978727479e-70"
+    },
+    {
+      "name": "strong_boundary",
+      "quantity": "singular_gap",
+      "scaled_absolute_error": "1.303266707762385106085252e-71"
+    },
+    {
+      "name": "strong_boundary_plus_1e-4",
+      "quantity": "gain",
+      "scaled_absolute_error": "8.306852269887237005684306e-72"
+    },
+    {
+      "name": "strong_boundary_plus_1e-4",
+      "quantity": "time",
+      "scaled_absolute_error": "1.545415315340795012783696e-71"
+    },
+    {
+      "name": "strong_boundary_plus_1e-4",
+      "quantity": "peak",
+      "scaled_absolute_error": "2.149305857509055260985928e-70"
+    },
+    {
+      "name": "strong_boundary_plus_1e-4",
+      "quantity": "alpha",
+      "scaled_absolute_error": "4.131053116802721572476762e-71"
+    },
+    {
+      "name": "strong_boundary_plus_1e-4",
+      "quantity": "gain_partial",
+      "scaled_absolute_error": "4.305702327872078100342935e-74"
+    },
+    {
+      "name": "strong_boundary_plus_1e-4",
+      "quantity": "time_curvature",
+      "scaled_absolute_error": "8.767739172406170219784148e-71"
+    },
+    {
+      "name": "strong_boundary_plus_1e-4",
+      "quantity": "singular_gap",
+      "scaled_absolute_error": "4.293363345196538000843711e-71"
+    },
+    {
+      "name": "incumbent",
+      "quantity": "gain",
+      "scaled_absolute_error": "0.0"
+    },
+    {
+      "name": "incumbent",
+      "quantity": "time",
+      "scaled_absolute_error": "1.892007341547882153374448e-71"
+    },
+    {
+      "name": "incumbent",
+      "quantity": "peak",
+      "scaled_absolute_error": "2.861101491240569661458157e-70"
+    },
+    {
+      "name": "incumbent",
+      "quantity": "alpha",
+      "scaled_absolute_error": "9.92890573387958084197015e-71"
+    },
+    {
+      "name": "incumbent",
+      "quantity": "gain_partial",
+      "scaled_absolute_error": "3.967353575592636326618682e-74"
+    },
+    {
+      "name": "incumbent",
+      "quantity": "time_curvature",
+      "scaled_absolute_error": "2.679229113338749523560846e-71"
+    },
+    {
+      "name": "incumbent",
+      "quantity": "singular_gap",
+      "scaled_absolute_error": "4.883438104563722193767021e-71"
+    },
+    {
+      "name": "exclusion_boundary",
+      "quantity": "gain",
+      "scaled_absolute_error": "0.0"
+    },
+    {
+      "name": "exclusion_boundary",
+      "quantity": "time",
+      "scaled_absolute_error": "5.06853780453756081291638e-72"
+    },
+    {
+      "name": "exclusion_boundary",
+      "quantity": "peak",
+      "scaled_absolute_error": "3.732199578707621272108694e-70"
+    },
+    {
+      "name": "exclusion_boundary",
+      "quantity": "alpha",
+      "scaled_absolute_error": "1.138670859147363423046062e-70"
+    },
+    {
+      "name": "exclusion_boundary",
+      "quantity": "gain_partial",
+      "scaled_absolute_error": "3.320873129628062508324938e-73"
+    },
+    {
+      "name": "exclusion_boundary",
+      "quantity": "time_curvature",
+      "scaled_absolute_error": "1.385696451484969660766039e-70"
+    },
+    {
+      "name": "exclusion_boundary",
+      "quantity": "singular_gap",
+      "scaled_absolute_error": "4.820807986946871811341665e-71"
+    },
+    {
+      "name": "reference_gain_12",
+      "quantity": "gain",
+      "scaled_absolute_error": "0.0"
+    },
+    {
+      "name": "reference_gain_12",
+      "quantity": "time",
+      "scaled_absolute_error": "8.686065163530309366756622e-73"
+    },
+    {
+      "name": "reference_gain_12",
+      "quantity": "peak",
+      "scaled_absolute_error": "7.365425905308692071265418e-71"
+    },
+    {
+      "name": "reference_gain_12",
+      "quantity": "alpha",
+      "scaled_absolute_error": "0.0"
+    },
+    {
+      "name": "reference_gain_12",
+      "quantity": "gain_partial",
+      "scaled_absolute_error": "4.078388084253447137851518e-73"
+    },
+    {
+      "name": "reference_gain_12",
+      "quantity": "time_curvature",
+      "scaled_absolute_error": "1.425103441720189653560749e-70"
+    },
+    {
+      "name": "reference_gain_12",
+      "quantity": "singular_gap",
+      "scaled_absolute_error": "5.495840676667426445998343e-72"
+    }
+  ],
+  "direct_grid_crosschecks": [
+    {
+      "name": "weak_boundary",
+      "height_difference": 4.440892098500626e-16,
+      "grid": {
+        "gain": 1.0458753687680271,
+        "peak": 2.0599349523718815,
+        "time": 0.7485717543366454,
+        "alpha": -0.5,
+        "sample_count": 639,
+        "sampled_humps": 24,
+        "sampled_tail_norm": 1.1408123795501867e-10,
+        "horizon": 48.0,
+        "density": 2,
+        "status": "numerical stationary witness; not an interval-certified global extremum"
+      }
+    },
+    {
+      "name": "low_gain",
+      "height_difference": 0.0,
+      "grid": {
+        "gain": 2.0,
+        "peak": 1.428322239844431,
+        "time": 0.4493998463573963,
+        "alpha": -0.9518750965795638,
+        "sample_count": 639,
+        "sampled_humps": 32,
+        "sampled_tail_norm": 1.6385027145475638e-20,
+        "horizon": 48.0,
+        "density": 2,
+        "status": "numerical stationary witness; not an interval-certified global extremum"
+      }
+    },
+    {
+      "name": "peak_candidate",
+      "height_difference": 2.220446049250313e-16,
+      "grid": {
+        "gain": 6.44533067245443,
+        "peak": 1.1002429813937369,
+        "time": 0.13781267619745302,
+        "alpha": -2.9362358540787907,
+        "sample_count": 639,
+        "sampled_humps": 1,
+        "sampled_tail_norm": 1.782048790351581e-61,
+        "horizon": 48.0,
+        "density": 2,
+        "status": "numerical stationary witness; not an interval-certified global extremum"
+      }
+    },
+    {
+      "name": "strong_boundary",
+      "height_difference": 0.0,
+      "grid": {
+        "gain": 6.479708253539925,
+        "peak": 1.1002467126306095,
+        "time": 0.13728159354969144,
+        "alpha": -2.9499999999999993,
+        "sample_count": 639,
+        "sampled_humps": 1,
+        "sampled_tail_norm": 9.432242747410803e-62,
+        "horizon": 48.0,
+        "density": 2,
+        "status": "numerical stationary witness; not an interval-certified global extremum"
+      }
+    },
+    {
+      "name": "strong_boundary_plus_1e-4",
+      "height_difference": 0.0,
+      "grid": {
+        "gain": 6.479808253539924,
+        "peak": 1.100246734285723,
+        "time": 0.13728006008045962,
+        "alpha": -2.950039973705635,
+        "sample_count": 639,
+        "sampled_humps": 1,
+        "sampled_tail_norm": 9.414666605385172e-62,
+        "horizon": 48.0,
+        "density": 2,
+        "status": "numerical stationary witness; not an interval-certified global extremum"
+      }
+    },
+    {
+      "name": "incumbent",
+      "height_difference": 2.220446049250313e-16,
+      "grid": {
+        "gain": 6.5,
+        "peak": 1.1002523748218458,
+        "time": 0.13697176274654288,
+        "alpha": -2.958103632306086,
+        "sample_count": 639,
+        "sampled_humps": 1,
+        "sampled_tail_norm": 6.448374231488119e-62,
+        "horizon": 48.0,
+        "density": 2,
+        "status": "numerical stationary witness; not an interval-certified global extremum"
+      }
+    },
+    {
+      "name": "exclusion_boundary",
+      "height_difference": 0.0,
+      "grid": {
+        "gain": 10.0,
+        "peak": 1.1216194418690113,
+        "time": 0.10579299869915121,
+        "alpha": -3.9227826549840588,
+        "sample_count": 639,
+        "sampled_humps": 1,
+        "sampled_tail_norm": 4.7249894905334366e-82,
+        "horizon": 48.0,
+        "density": 2,
+        "status": "numerical stationary witness; not an interval-certified global extremum"
+      }
+    },
+    {
+      "name": "reference_gain_12",
+      "height_difference": 2.220446049250313e-16,
+      "grid": {
+        "gain": 12.0,
+        "peak": 1.140333747603854,
+        "time": 0.09644270347201993,
+        "alpha": -4.0,
+        "sample_count": 639,
+        "sampled_humps": 1,
+        "sampled_tail_norm": 1.8291282791290692e-83,
+        "horizon": 48.0,
+        "density": 2,
+        "status": "numerical stationary witness; not an interval-certified global extremum"
+      }
+    }
+  ],
+  "stationary_evaluations": 16,
+  "matched_precision_comparisons": 56,
+  "independent_spectral_comparisons": 32,
+  "detail_peak_rows": 179,
+  "spectral_rows": 385,
+  "constrained_gain_grid_rows": 388,
+  "new_global_peak_optimizer_certificate": false,
+  "new_all_time_upper_certificate": false
+}
