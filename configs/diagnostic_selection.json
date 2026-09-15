@@ -1,0 +1,69 @@
+{
+  "schema_version": 2,
+  "selection_id": "diagnostic_selection_v2",
+  "sources": {
+    "grid": "data/asymptotic_comparison.csv",
+    "large_gain": "reference/comparison_residual.json"
+  },
+  "rows": [
+    {
+      "metric": "normalized",
+      "gain": 10,
+      "source": "grid"
+    },
+    {
+      "metric": "normalized",
+      "gain": 25,
+      "source": "grid"
+    },
+    {
+      "metric": "normalized",
+      "gain": 50,
+      "source": "grid"
+    },
+    {
+      "metric": "normalized",
+      "gain": 100,
+      "source": "grid"
+    },
+    {
+      "metric": "normalized",
+      "gain": 140,
+      "source": "grid"
+    },
+    {
+      "metric": "normalized",
+      "gain": 150,
+      "source": "grid"
+    },
+    {
+      "metric": "normalized",
+      "gain": 1000,
+      "source": "grid"
+    },
+    {
+      "metric": "normalized",
+      "gain": 34359738368,
+      "source": "large_gain"
+    }
+  ],
+  "columns": [
+    "metric",
+    "gain",
+    "height_error_pct",
+    "correction_error_pct",
+    "time_error_pct",
+    "sensitivity_error_pct",
+    "R_G"
+  ],
+  "omission_token": "",
+  "correction_floor_relative_to_gamma": "1e-8",
+  "display_columns": [
+    "gain",
+    "height_error_pct",
+    "correction_error_pct",
+    "time_error_pct",
+    "sensitivity_error_pct",
+    "R_G"
+  ]
+}
